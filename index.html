@@ -179,7 +179,8 @@
       position: relative;
       width: 100%;
       max-width: 450px;
-      aspect-ratio: 450 / 480;
+      min-height: 380px;  
+      height: clamp(280px, 55vw, 480px);
       background: rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(8px);
       border-radius: 40px;
@@ -544,10 +545,15 @@
       .page-wrapper {
         padding: 1.5rem 1rem;
       }
-      .hero {
-        flex-direction: column;
+     .hero {
+        /* ¡MAGIA AQUÍ! Cambiamos column por column-reverse */
+        flex-direction: column-reverse; 
         text-align: center;
         padding: 2rem 1.5rem;
+      }
+     .hero-carousel-wrapper {
+        margin-bottom: 2rem; 
+        width: 100%; /* ✨ ¡AQUÍ ESTÁ LA MAGIA QUE FALTA! ✨ */
       }
       .hero-content {
         text-align: center;
@@ -644,7 +650,7 @@
     <div class="hero-carousel-wrapper">
       <div class="carousel-container">
         <div class="carousel-slides">
-          <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0002-removebg-preview.png" alt="Claudia Medina retrato profesional" class="carousel-slide" data-index="0" loading="lazy">
+        <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0002-removebg-preview.png" ... class="carousel-slide active" data-index="0">
           <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0001-removebg-preview.png" alt="Liderazgo sindical Claudia Medina" class="carousel-slide" data-index="1" loading="lazy">
           <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0003-removebg-preview.png" alt="35 años de experiencia en Recursos Humanos" class="carousel-slide" data-index="2" loading="lazy">
         </div>
