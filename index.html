@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Claudia Medina Miranda | Vicepresidenta SNTISSSTE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --rosa-claro: #fff0f3;
+      --rosa-principal: #d45c7a;
+      --rosa-oscuro: #a54266;
+      --oro-suave: #f5e2b0;
+      --oro: #d4af37;
+      --oro-oscuro: #b88b2c;
+      --texto-oscuro: #2e2a2b;
+      --texto-suave: #7a5a4f;
+      --gris-rosado: #f9e6ea;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fff5f7 0%, #ffeef4 100%);
+      font-family: 'Inter', sans-serif;
+      color: var(--texto-oscuro);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    .page-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 2rem;
+    }
+
+    /* ========== ANIMACIONES GLOBALES ========== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes softGlow {
+      0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.2); }
+      70% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes pulseBtn {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); box-shadow: 0 12px 24px rgba(212, 92, 122, 0.4); }
+      100% { transform: scale(1); }
+    }
+
+    .hero, .bio-card, .contacto-card, .vida-bella, .footer-grid {
+      animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      opacity: 0;
+    }
+
+    .hero { animation-delay: 0.05s; }
+    .bio-card { animation-delay: 0.2s; }
+    .contacto-card { animation-delay: 0.3s; }
+    .vida-bella { animation-delay: 0.45s; }
+    .footer-grid { animation-delay: 0.6s; }
+
+    /* sección hero mejorada */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      background: rgba(255, 245, 247, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 3rem;
+      padding: 3rem 2rem;
+      box-shadow: 0 25px 45px -12px rgba(190, 60, 100, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero:hover {
+      box-shadow: 0 30px 50px -16px rgba(180, 70, 100, 0.2);
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--oro) 0%, var(--oro-oscuro) 100%);
+      padding: 0.35rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #2c1810;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #b3416c, #d47b4a, var(--oro));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .cargo-principal {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--rosa-oscuro);
+      border-left: 4px solid var(--oro);
+      padding-left: 1rem;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .frase-destacada {
+      font-size: 1.5rem;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      color: #b45f3a;
+      background: linear-gradient(120deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+      display: inline-block;
+      padding: 0.4rem 1.5rem;
+      border-radius: 60px;
+      margin: 0.75rem 0;
+      backdrop-filter: blur(2px);
+    }
+
+    .btn-rosa {
+      background: linear-gradient(95deg, var(--rosa-principal), #bd5a77);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: default;
+      box-shadow: 0 8px 18px rgba(212, 92, 122, 0.3);
+      transition: all 0.3s;
+    }
+    
+    .btn-rosa:hover {
+      animation: pulseBtn 1s infinite;
+    }
+
+    /* =========================================
+       CARRUSEL DE IMÁGENES (Hero)
+       ========================================= */
+    .hero-carousel-wrapper {
+      flex: 0.9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 450px;
+      height: 480px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+      border-radius: 40px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    @keyframes fadeCarousel {
+      0%, 25% { opacity: 1; transform: scale(1); filter: drop-shadow(0 20px 25px rgba(0,0,0,0.15)); }
+      33%, 92% { opacity: 0; transform: scale(0.95); filter: drop-shadow(0 10px 10px rgba(0,0,0,0)); }
+      100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 20px 25px rgba(0,0,0,0.15)); }
+    }
+
+    .carousel-slide {
+      position: absolute;
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+      opacity: 0;
+      animation: fadeCarousel 12s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .slide-1 { animation-delay: 0s; }
+    .slide-2 { animation-delay: 4s; }
+    .slide-3 { animation-delay: 8s; }
+
+    /* info grid */
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 3rem 0 3rem;
+    }
+
+    .bio-card {
+      flex: 1.5;
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 25px 40px -15px rgba(0,0,0,0.08);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      transition: all 0.3s;
+    }
+
+    .bio-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 175, 55, 0.6);
+      box-shadow: 0 30px 45px -12px rgba(0,0,0,0.12);
+    }
+
+    .contacto-card {
+      flex: 1;
+      background: linear-gradient(125deg, #fff8fa, #fff2f7);
+      border-radius: 2rem;
+      padding: 2rem;
+      border: 1px solid #f3cfb5;
+      box-shadow: 0 20px 35px rgba(180, 70, 100, 0.06);
+      transition: all 0.3s;
+    }
+
+    .contacto-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 40px rgba(180, 70, 100, 0.1);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--rosa-oscuro);
+      margin-bottom: 1.3rem;
+      border-bottom: 3px solid var(--oro);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .experiencia-texto {
+      font-size: 1.02rem;
+      color: #3d2e33;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .destacado-oro {
+      color: var(--oro-oscuro);
+      font-weight: 700;
+    }
+
+    .lista-experiencia {
+      margin-top: 1.2rem;
+      list-style: none;
+    }
+
+    .lista-experiencia li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.85rem;
+      font-size: 0.98rem;
+    }
+
+    .lista-experiencia i {
+      font-size: 1.1rem;
+    }
+
+    .contacto-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      word-break: break-word;
+    }
+
+    .contacto-icono {
+      width: 44px;
+      height: 44px;
+      background: rgba(212, 175, 55, 0.15);
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #b37b48;
+      font-size: 1.3rem;
+      transition: all 0.2s;
+    }
+
+    .contacto-item:hover .contacto-icono {
+      background: rgba(212, 175, 55, 0.35);
+      transform: scale(1.05);
+    }
+
+    .contacto-info a {
+      text-decoration: none;
+      color: var(--rosa-principal);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contacto-info a:hover {
+      color: var(--oro);
+    }
+
+    /* Vida bella */
+    .vida-bella {
+      text-align: center;
+      margin: 3rem 0 2.5rem;
+      padding: 2.2rem 1rem;
+      background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1), rgba(245, 200, 170, 0.05));
+      border-radius: 80px;
+      transition: all 0.3s;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .lema-principal {
+      font-size: 3.4rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      background: linear-gradient(135deg, #e6b422, #d45c7a, #c28142);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+      display: inline-block;
+      animation: softGlow 2.5s infinite;
+    }
+
+    .lema-sub {
+      font-size: 1.2rem;
+      color: #aa6f4c;
+      margin-top: 0.9rem;
+      font-weight: 400;
+    }
+
+    /* FOOTER */
+    .footer-section {
+      background: linear-gradient(100deg, #fce8ed, #f9e0e7);
+      padding: 2.5rem 0 1.5rem;
+      border-top: 4px solid var(--oro);
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 2rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+      transition: all 0.3s;
+    }
+
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--rosa-oscuro);
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    .footer-col .contacto-item {
+      margin-bottom: 1rem;
+    }
+
+    .footer-col .contacto-item i {
+      width: 38px;
+      height: 38px;
+      background: rgba(212, 175, 55, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--oro-oscuro);
+    }
+
+    /* QR editable y clickeable */
+    .qr-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .qr-box {
+      background: white;
+      padding: 12px;
+      border-radius: 16px;
+      border: 2px solid var(--oro);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+      transition: transform 0.3s ease;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .qr-box:hover {
+      transform: scale(1.05) translateY(-5px);
+    }
+
+    .qr-box img {
+      width: 130px;
+      height: 130px;
+      display: block;
+      border-radius: 8px;
+      pointer-events: none; /* Para que el clic lo maneje el contenedor */
+    }
+
+    .qr-note {
+      font-size: 0.7rem;
+      color: #b37b48;
+      margin-top: 8px;
+      background: rgba(212, 175, 55, 0.15);
+      padding: 4px 8px;
+      border-radius: 30px;
+      display: inline-block;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--texto-suave);
+      padding-top: 1rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    .copyright-footer-gem {
+      margin-top: 12px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    /* EXTRAS RESPONSIVOS */
+    @media (max-width: 850px) {
+      .page-wrapper {
+        padding: 1.5rem 1rem;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .cargo-principal {
+        border-left: none;
+        border-top: 2px solid var(--oro);
+        padding-top: 0.8rem;
+        display: inline-block;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+      .lema-principal {
+        font-size: 2.2rem;
+      }
+      .info-grid {
+        flex-direction: column;
+      }
+      .contacto-item {
+        justify-content: flex-start;
+      }
+      .carousel-container {
+        max-width: 320px;
+        height: 350px;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-col .contacto-item {
+        justify-content: center;
+      }
+      .qr-wrapper {
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-container {
+        max-width: 260px;
+        height: 280px;
+      }
+      .frase-destacada {
+        font-size: 1.2rem;
+      }
+      .btn-rosa {
+        font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
+      }
+      .lema-principal {
+        font-size: 1.9rem;
+      }
+    }
+
+    .badge-gold {
+      background: #d4af3720;
+      border-radius: 30px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #a5623a;
+      display: inline-block;
+    }
+
+    hr {
+      border-color: #f0cfb0;
+      margin: 1rem 0;
+    }
+
+    i.fa, i.far, i.fas {
+      margin-right: 6px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-star-of-life"></i> SNTISSSTE · SECRETARIA DE RECURSOS HUMANOS CDMX
+      </div>
+      <h1>Claudia Medina Miranda</h1>
+      <div class="cargo-principal">
+        Candidata a Vicepresidenta del Sindicato Nacional de Trabajadores del ISSSTE
+      </div>
+      <div class="frase-destacada">
+        <i class="fas fa-gem" style="color:#d4af37;"></i> Siempre brilla <i class="fas fa-sun" style="color:#f5b042;"></i>
+      </div>
+      <p style="margin-top: 1.2rem; max-width: 550px; font-weight: 400; color: #5c3f46;">
+        Más de 35 años de experiencia en Recursos Humanos, liderazgo con calidez humana y visión transformadora. 
+        Por un sindicato fuerte, incluyente y brillante.
+      </p>
+      <div class="btn-rosa" style="margin-top: 1.2rem;">
+        <i class="fas fa-ribbon"></i> Talento & Compromiso
+      </div>
+    </div>
+    
+    <div class="hero-carousel-wrapper">
+      <div class="carousel-container">
+        <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0002-removebg-preview.png" alt="Claudia Medina retrato profesional" class="carousel-slide slide-1" loading="lazy">
+        <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0001-removebg-preview.png" alt="Liderazgo sindical Claudia Medina" class="carousel-slide slide-2" loading="lazy">
+        <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0003-removebg-preview.png" alt="35 años de experiencia en Recursos Humanos" class="carousel-slide slide-3" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="bio-card">
+      <div class="section-title">
+        <i class="fas fa-female"></i> Perfil profesional
+      </div>
+      <div class="experiencia-texto">
+        <span class="destacado-oro"><i class="fas fa-medal"></i> Maestra en Administración de Negocios</span> con especialidad en <strong>Dirección de Talento</strong>.  
+        Especialista con <strong class="destacado-oro">35 años de experiencia</strong> en el área de Recursos Humanos dentro del SNTISSSTE y el sector público.
+      </div>
+      <ul class="lista-experiencia">
+        <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> <span>Conocimiento profundo de las necesidades de la base trabajadora del SNTISSSTE.</span></li>
+        <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> <span>Gestión eficiente combinada con atención humana y cercana.</span></li>
+        <li><i class="fas fa-check-circle" style="color:#d4af37;"></i> <span>Visión estratégica para fortalecer derechos y prestaciones.</span></li>
+      </ul>
+      <div class="experiencia-texto" style="margin-top: 1rem; background: #faf0ec; padding: 1rem; border-radius: 1.5rem;">
+        <i class="fas fa-quote-left" style="color:#c2895a;"></i> Mi misión es construir un sindicato más humano, brillante y cercano, donde cada trabajador sienta respaldo y oportunidades reales. 
+        <span style="display:block; margin-top: 0.5rem;">✨ <strong>Siempre brillar, siempre servir</strong> ✨</span>
+      </div>
+    </div>
+
+    <div class="contacto-card">
+      <div class="section-title" style="font-size: 1.6rem;">
+        <i class="fas fa-address-card"></i> Contacto directo
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-icono"><i class="fab fa-instagram"></i></div>
+        <div class="contacto-info">@cmedina11805</div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-icono"><i class="fas fa-phone-alt"></i></div>
+        <div class="contacto-info">+52 (55) 3924 4856</div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-icono"><i class="fas fa-envelope"></i></div>
+        <div class="contacto-info"><a href="mailto:cmedina11805@gmail.com">cmedina11805@gmail.com</a></div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-icono"><i class="fas fa-globe"></i></div>
+        <div class="contacto-info"><a href="https://www.sntissste.mx" target="_blank" rel="noopener">www.sntissste.mx</a></div>
+      </div>
+      <hr>
+      <div class="contacto-item">
+        <div class="contacto-icono"><i class="fas fa-location-dot"></i></div>
+        <div class="contacto-info">
+          Av. Fuentes Brotantes, Fuentes Brotantes,<br>
+          Miguel Hidalgo, 14410 Ciudad de México, CDMX
+        </div>
+      </div>
+      <div class="badge-gold" style="margin-top: 1rem; text-align: center; width: 100%;">
+        <i class="fas fa-hand-holding-heart"></i> Compromiso con la base trabajadora
+      </div>
+    </div>
+  </div>
+
+  <div class="vida-bella">
+    <div class="lema-principal">
+      ✧ LA VIDA ES BELLA ✧
+    </div>
+    <div class="lema-sub">
+      <i class="fas fa-spa"></i> “Con amor, entrega y experiencia, construimos un mejor futuro para todos” 
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 1.2rem; font-weight: 600; color:#c0845c;">
+      <i class="fas fa-star" style="color:#e7b42c;"></i> Siempre brilla <i class="fas fa-star" style="color:#e7b42c;"></i>
+    </div>
+    <div style="margin-top: 1rem;">
+      <span style="background: #eeddcc40; padding: 0.3rem 1.2rem; border-radius: 40px; font-size: 0.85rem;">
+        <i class="fas fa-female"></i> #ClaudiaVicepresidenta #SNTISSSTE #TalentoHumano
+      </span>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-section">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4><i class="fas fa-map-marker-alt"></i> Sede Sindical</h4>
+        <div class="contacto-item">
+          <i class="fas fa-building"></i>
+          <span>Av. Fuentes Brotantes, Col. Fuentes Brotantes,<br>Miguel Hidalgo, C.P. 14410<br>Ciudad de México, CDMX</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4><i class="fas fa-id-card"></i> Contacto Directo</h4>
+        <div class="contacto-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>+52 (55) 3924 4856</span>
+        </div>
+        <div class="contacto-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:cmedina11805@gmail.com">cmedina11805@gmail.com</a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4><i class="fas fa-qrcode"></i> Tarjeta de Presentación</h4>
+        <div class="qr-wrapper">
+          <p style="font-size: 0.9rem; margin-bottom: 0.8rem; color: var(--texto-suave);">Escanea o haz clic para obtener mi tarjeta de presentación</p>
+          <!-- QR clickeable que abre el PDF de la tarjeta -->
+          <div class="qr-box" onclick="window.open('https://cdn.qrcode-ai.com/qrcode/document/e0faede5d52ce964d3b197608c6d996e-1726288256779.pdf', '_blank')">
+            <img src="https://cdn.qrcode-ai.com/qrcode/64a13df5ee43216c413bfcccee669906-1726288381786.png" alt="Código QR - Tarjeta de presentación Claudia Medina">
+          </div>
+          <div class="qr-note">
+            <i class="fas fa-mouse-pointer"></i> Haz clic en el código QR para ver la tarjeta
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p><i class="far fa-copyright"></i> 2025 Claudia Medina Miranda · Candidatura a Vicepresidencia SNTISSSTE</p>
+      <p style="margin-top: 6px; opacity: 0.8;">Sitio estrictamente informativo</p>
+      <div class="copyright-footer-gem">
+        <i class="fas fa-gem" style="color:#d4af37;"></i> “La vida es bella, llena de oportunidades” <i class="fas fa-gem" style="color:#d4af37;"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
