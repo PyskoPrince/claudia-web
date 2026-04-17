@@ -132,7 +132,7 @@
     }
 
     .frase-destacada {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-style: italic;
       font-family: 'Playfair Display', serif;
       color: #b45f3a;
@@ -172,7 +172,7 @@
       justify-content: center;
       align-items: center;
       animation: float 6s ease-in-out infinite;
-      min-width: 0; /* Evita desbordamiento en flex */
+      min-width: 0;
     }
 
     .carousel-container {
@@ -386,7 +386,7 @@
       color: var(--oro);
     }
 
-    /* Vida bella */
+    /* Vida bella - Mensaje renovado */
     .vida-bella {
       text-align: center;
       margin: 3rem 0 2.5rem;
@@ -397,7 +397,7 @@
     }
 
     .lema-principal {
-      font-size: 3.4rem;
+      font-size: 3rem;
       font-family: 'Playfair Display', serif;
       font-weight: 800;
       background: linear-gradient(135deg, #e6b422, #d45c7a, #c28142);
@@ -405,12 +405,20 @@
       -webkit-background-clip: text;
       color: transparent;
       animation: softGlow 2.5s infinite;
+      margin-bottom: 1rem;
     }
 
-    .lema-sub {
+    .mensaje-servicio {
       font-size: 1.2rem;
-      color: #aa6f4c;
-      margin-top: 0.9rem;
+      color: #5c3f46;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .mensaje-servicio i {
+      color: var(--oro);
+      margin-right: 8px;
     }
 
     /* Footer */
@@ -545,15 +553,14 @@
       .page-wrapper {
         padding: 1.5rem 1rem;
       }
-     .hero {
-        /* ¡MAGIA AQUÍ! Cambiamos column por column-reverse */
-        flex-direction: column-reverse; 
+      .hero {
+        flex-direction: column-reverse;
         text-align: center;
         padding: 2rem 1.5rem;
       }
-     .hero-carousel-wrapper {
-        margin-bottom: 2rem; 
-        width: 100%; /* ✨ ¡AQUÍ ESTÁ LA MAGIA QUE FALTA! ✨ */
+      .hero-carousel-wrapper {
+        margin-bottom: 2rem;
+        width: 100%;
       }
       .hero-content {
         text-align: center;
@@ -599,6 +606,10 @@
       .carousel-btn i {
         font-size: 1rem;
       }
+      .mensaje-servicio {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -606,7 +617,7 @@
         max-width: 260px;
       }
       .frase-destacada {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
       .btn-rosa {
         font-size: 0.8rem;
@@ -635,7 +646,7 @@
         Candidata a Vicepresidenta del Sindicato Nacional de Trabajadores del ISSSTE
       </div>
       <div class="frase-destacada">
-        <i class="fas fa-gem" style="color:#d4af37;"></i> Siempre brilla <i class="fas fa-sun" style="color:#f5b042;"></i>
+        <i class="fas fa-hand-holding-heart" style="color:#d4af37;"></i> Servir a mis compañeros, con lealtad y trabajo
       </div>
       <p style="margin-top: 1.2rem; max-width: 550px; font-weight: 400; color: #5c3f46;">
         Más de 35 años de experiencia en Recursos Humanos, liderazgo con calidez humana y visión transformadora. 
@@ -646,11 +657,11 @@
       </div>
     </div>
     
-    <!-- CARRUSEL CON BOTONES DORADOS Y RESPONSIVE GARANTIZADO -->
+    <!-- CARRUSEL CON BOTONES DORADOS -->
     <div class="hero-carousel-wrapper">
       <div class="carousel-container">
         <div class="carousel-slides">
-        <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0002-removebg-preview.png" ... class="carousel-slide active" data-index="0">
+          <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0002-removebg-preview.png" alt="Claudia Medina retrato profesional" class="carousel-slide active" data-index="0" loading="lazy">
           <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0001-removebg-preview.png" alt="Liderazgo sindical Claudia Medina" class="carousel-slide" data-index="1" loading="lazy">
           <img src="https://storage.googleapis.com/humansystem/CLaudia_fotos_page-0003-removebg-preview.png" alt="35 años de experiencia en Recursos Humanos" class="carousel-slide" data-index="2" loading="lazy">
         </div>
@@ -677,7 +688,7 @@
       </ul>
       <div class="experiencia-texto" style="margin-top: 1rem; background: #faf0ec; padding: 1rem; border-radius: 1.5rem;">
         <i class="fas fa-quote-left" style="color:#c2895a;"></i> Mi misión es construir un sindicato más humano, brillante y cercano, donde cada trabajador sienta respaldo y oportunidades reales. 
-        <span style="display:block; margin-top: 0.5rem;">✨ <strong>Siempre brillar, siempre servir</strong> ✨</span>
+        <span style="display:block; margin-top: 0.5rem;">✨ <strong>Siempre servir, siempre trabajar por ustedes</strong> ✨</span>
       </div>
     </div>
 
@@ -715,17 +726,18 @@
     </div>
   </div>
 
+  <!-- NUEVA SECCIÓN: Mensaje de servicio, lealtad y visión de futuro -->
   <div class="vida-bella">
     <div class="lema-principal">
       ✧ LA VIDA ES BELLA ✧
     </div>
-    <div class="lema-sub">
-      <i class="fas fa-spa"></i> “Con amor, entrega y experiencia, construimos un mejor futuro para todos” 
+    <div class="mensaje-servicio">
+      <i class="fas fa-users"></i> Representamos trabajo, lealtad y una visión clara de futuro para todas y todos.
     </div>
-    <div style="margin-top: 0.8rem; font-size: 1.2rem; font-weight: 600; color:#c0845c;">
-      <i class="fas fa-star" style="color:#e7b42c;"></i> Siempre brilla <i class="fas fa-star" style="color:#e7b42c;"></i>
+    <div class="mensaje-servicio" style="margin-top: 0.8rem;">
+      <i class="fas fa-handshake"></i> Con el respaldo de nuestra gran familia sindical, seguiremos construyendo un SNTISSSTE más fuerte, justo y cercano a su gente.
     </div>
-    <div style="margin-top: 1rem;">
+    <div style="margin-top: 1.5rem;">
       <span style="background: #eeddcc40; padding: 0.3rem 1.2rem; border-radius: 40px; font-size: 0.85rem;">
         <i class="fas fa-female"></i> #ClaudiaVicepresidenta #SNTISSSTE #TalentoHumano
       </span>
@@ -759,7 +771,7 @@
         <h4><i class="fas fa-qrcode"></i> Tarjeta de Presentación</h4>
         <div class="qr-wrapper">
           <p style="font-size: 0.9rem; margin-bottom: 0.8rem; color: var(--texto-suave);">Escanea o haz clic para obtener mi tarjeta de presentación</p>
-          <div class="qr-box" onclick="window.open('https://cdn.qrcode-ai.com/qrcode/document/e0faede5d52ce964d3b197608c6d996e-1726288256779.pdf', '_blank')">
+          <div class="qr-box" onclick="window.open('https://cdn.qrcode-ai.com/qrcode/document/85dd62fde0ffaacec84539a80993c470-1776391061641.pdf', '_blank')">
             <img src="https://cdn.qrcode-ai.com/qrcode/64a13df5ee43216c413bfcccee669906-1726288381786.png" alt="Código QR - Tarjeta de presentación Claudia Medina">
           </div>
           <div class="qr-note">
@@ -773,7 +785,7 @@
       <p><i class="far fa-copyright"></i> 2025 Claudia Medina Miranda · Candidatura a Vicepresidencia SNTISSSTE</p>
       <p style="margin-top: 6px; opacity: 0.8;">Sitio estrictamente informativo</p>
       <div class="copyright-footer-gem">
-        <i class="fas fa-gem" style="color:#d4af37;"></i> “La vida es bella, llena de oportunidades” <i class="fas fa-gem" style="color:#d4af37;"></i>
+        <i class="fas fa-gem" style="color:#d4af37;"></i> “Siempre servir, siempre trabajar por nuestros compañeros” <i class="fas fa-gem" style="color:#d4af37;"></i>
       </div>
     </div>
   </div>
@@ -781,7 +793,6 @@
 
 <script>
   (function() {
-    // Esperar a que el DOM esté completamente cargado
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initCarousel);
     } else {
