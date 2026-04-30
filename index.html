@@ -17,6 +17,7 @@
       --rosa-claro: #fff0f3;
       --rosa-principal: #d45c7a;
       --rosa-oscuro: #a54266;
+      --rosa-fuerte: #d45c7a;
       --oro-suave: #f5e2b0;
       --oro: #d4af37;
       --oro-oscuro: #b88b2c;
@@ -164,9 +165,9 @@
     }
 
     /* =========================================
-       CARRUSEL MEJORADO - TOTALMENTE RESPONSIVE
+       CARRUSEL MEJORADO - RESPONSIVE PERFECTO
        ========================================= */
-    .hero-carousel-wrapper {
+ .hero-carousel-wrapper {
       flex: 0.9;
       display: flex;
       justify-content: center;
@@ -189,13 +190,7 @@
       overflow: hidden;
     }
 
-    .carousel-slides {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .carousel-slide {
+     .carousel-slide {
       position: absolute;
       top: 0;
       left: 0;
@@ -488,7 +483,8 @@
     }
 
     .qr-box:hover {
-      transform: scale(1.05) translateY(-5px);
+      transform: translateY(-6px) scale(1.04);
+      border-color: var(--rosa-fuerte);
     }
 
     .qr-box img {
@@ -583,8 +579,11 @@
       .contacto-item {
         justify-content: flex-start;
       }
+      /* Carrusel en móvil: ocupa todo el ancho disponible */
       .carousel-container {
-        max-width: 320px;
+        max-width: 100%;
+        width: 100%;
+        aspect-ratio: 3/4; /* mantiene proporción */
       }
       .section-title {
         font-size: 1.6rem;
@@ -613,9 +612,6 @@
     }
 
     @media (max-width: 480px) {
-      .carousel-container {
-        max-width: 260px;
-      }
       .frase-destacada {
         font-size: 1.1rem;
       }
@@ -630,12 +626,19 @@
         width: 32px;
         height: 32px;
       }
+      /* Ajuste adicional para que los puntos no estorben */
+      .carousel-dots {
+        bottom: 10px;
+        gap: 8px;
+      }
     }
+
+    /* Centrar logo en móvil */
     @media (max-width: 850px) {
-  .hero-content > div:first-child {
-    justify-content: center !important;
-  }
-}
+      .hero-content > div:first-child {
+        justify-content: center !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -654,8 +657,9 @@
         <i class="fas fa-star-of-life"></i> SNTISSSTE · SECRETARIA DE RECURSOS HUMANOS CDMX
       </div>
       <h1> <em>Claudia Medina Miranda</em></h1>
+      <!-- TEXTO ACTUALIZADO: YA ES VICEPRESIDENTA -->
       <div class="cargo-principal">
-        Candidata a Vicepresidenta del Sindicato Nacional de Trabajadores del ISSSTE
+        Vicepresidenta del Sindicato Nacional de Trabajadores del ISSSTE
       </div>
       <div class="frase-destacada">
         <i class="fas fa-hand-holding-heart" style="color:#d4af37;"></i> Servir a mis compañeros, con lealtad y trabajo
@@ -669,12 +673,11 @@
       </div>
     </div>
     
-    <!-- CARRUSEL CON BOTONES DORADOS -->
+    <!-- CARRUSEL CON IMÁGENES CORRECTAS -->
     <div class="hero-carousel-wrapper">
       <div class="carousel-container">
         <div class="carousel-slides">
           <img src="https://storage.googleapis.com/humansystem/Image_20260416_194135_462.jpeg" alt="Claudia Medina retrato profesional" class="carousel-slide active" data-index="0" loading="lazy">
-          <img src="https://storage.googleapis.com/humansystem/Image_20260416_194135_481.jpeg" alt="Liderazgo sindical Claudia Medina" class="carousel-slide" data-index="1" loading="lazy">
           <img src="https://storage.googleapis.com/humansystem/Image_20260416_194135_442.jpeg" alt="35 años de experiencia en Recursos Humanos" class="carousel-slide" data-index="2" loading="lazy">
         </div>
         <button class="carousel-btn carousel-btn-prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
@@ -741,6 +744,7 @@
       </div>
     </div>
   </div>
+
 <div class="vida-bella">
   <div class="lema-principal" style="font-size: 2.2rem;">
     <i class="fas fa-handshake"></i> TRABAJO · LEALTAD · FUTURO
@@ -798,7 +802,7 @@
     </div>
 
     <div class="copyright">
-      <p><i class="far fa-copyright"></i> 2025 Claudia Medina Miranda · Candidatura a Vicepresidencia SNTISSSTE</p>
+      <p><i class="far fa-copyright"></i> 2025 Claudia Medina Miranda · Vicepresidenta SNTISSSTE</p>
       <p style="margin-top: 6px; opacity: 0.8;">Sitio estrictamente informativo</p>
       <div class="copyright-footer-gem">
         <i class="fas fa-gem" style="color:#d4af37;"></i> “Siempre servir, siempre trabajar por nuestros compañeros” <i class="fas fa-gem" style="color:#d4af37;"></i>
